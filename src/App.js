@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <DisplayContent text="Content here"/>
+        <DisplayContent text="Your Random Quote"/>
       </div>
     );
   }

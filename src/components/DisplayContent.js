@@ -1,14 +1,26 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Button from './Button';
+
+// const divStyle = {
+//     width: '600px'
+// };
+
+const pStyle = {
+    border: '2px solid black',
+    width: '300px',
+    textAlign: 'center'
+};
 
 const DisplayContent = (props) => {
     return (
         <div className="row">
-          <div class="col s12 m6">
+          <div className="col s12">
             <div className="card light-blue">
-                <h1>{props.text}</h1>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, assumenda? Dignissimos voluptatibus ut illo suscipit.</p>
-                <Button />
+                <h2>{props.text}</h2>
+                <p style={pStyle}>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quae, assumenda? Dignissimos voluptatibus ut illo suscipit.</p>
+                <Button buttonName="Twitter" />
+                <Button buttonName="Facebook" />
+                <Button buttonName="New Quote" />
             </div>
         </div>
         </div>
