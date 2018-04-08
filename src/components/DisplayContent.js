@@ -7,8 +7,9 @@ import Button from './Button';
 
 const pStyle = {
     border: '2px solid black',
-    width: '300px',
-    textAlign: 'center'
+    textAlign: 'center',
+    margin: '0 auto',
+    width: '50%'
 };
 
 const DisplayContent = (props) => {
