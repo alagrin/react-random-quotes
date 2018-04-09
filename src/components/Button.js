@@ -3,7 +3,8 @@ import React from 'react';
 const buttonStyle = {
     borderRadius:'50%',
     height: '80px', 
-    width: '80px'
+    width: '80px',
+    margin:'20px'
 };
 
 const Button = (props) => {

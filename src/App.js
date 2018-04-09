@@ -6,13 +6,9 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      quotes: [
-        'Quote number 1'
-      ]
+      quotes: []
     };
   }
-  
-  
 
   render() {
     return (
