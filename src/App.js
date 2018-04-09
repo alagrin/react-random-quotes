@@ -6,17 +6,14 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      quotes: []
+      
     };
   }
 
   render() {
     return (
       <div className="App">
-        <DisplayContent text="Your Random Quote"/>
-        <div>
-          {this.state.quotes[0]}
-        </div>
+        <DisplayContent text="Your Quote of the Day" />
       </div>
     );
   }
