@@ -12,6 +12,10 @@
     box-shadow: 2px rgb(77, 76, 76);
 }
 
+#quote {
+    padding: 0 50px;
+}
+
 .btn {
     margin: 10px;
 }

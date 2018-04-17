@@ -65,9 +65,9 @@ render() {
       <Button className="btn" buttonName="Facebook" />
       <Button className="btn" buttonName="Twitter" />
     </div>
-    <div>{this.state.quote}</div>
+    <div id="quote">{this.state.quote}</div>
     <div id="random" className="card">
-      <h3>Here's your random quote: </h3>
+      <h4>Here's your random quote: </h4>
       <p>{this.state.randomQuote}... A quote by {this.state.author}</p>
     </div>
     </div>
