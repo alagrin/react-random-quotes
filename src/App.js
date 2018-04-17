@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import Button from './components/Button';
-import getQuote from "./quoteGrab";
 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       quote: [],
-      randomQuote: 'Temporary quote'
+      randomQuote: '',
+      author: ''
     }
     this.handleRandomQuote = this.handleRandomQuote.bind(this);
   }
@@ -37,26 +37,38 @@ class App extends Component {
   });
 }
 
-handleRandomQuote() {
-  let result = getQuote();
-  // this.setState({
-  //   randomQuote: result
-  // });
-}
+  handleRandomQuote() {
+    const API_KEY = 'OqhHWrDT_4T6zLqsQlq76AeF';
+    return fetch(`http://quotes.rest/quote/random.json?api_key=${API_KEY}`, {
+      headers: {
+        "Accept": "application/json",
+        "X-TheySaidSo-Api-Secret": "OqhHWrDT_4T6zLqsQlq76AeF"
+      }
+    }).then(response => {
+      return response.json()
+    }).then(data => {
+      let quote = data.contents.quote;
+      let author = data.contents.author;
+      this.setState({
+        randomQuote: quote,
+        author: author
+      });
+    });
+  }
 
 render() {
   return (
     <div className="App card light-blue">
       <h2>Your Quote of the Day</h2> 
     <div className="row">
-      <Button buttonName="Twitter" onClick={this.handleRandomQuote}/>
+      <Button buttonName="Random" onClick={this.handleRandomQuote}/>
       <Button className="btn" buttonName="Facebook" />
-      <Button className="btn" buttonName="Quote" />
+      <Button className="btn" buttonName="Twitter" />
     </div>
     <div>{this.state.quote}</div>
-    <div>
+    <div id="random" className="card">
       <h3>Here's your random quote: </h3>
-      <p>{this.state.randomQuote}</p>
+      <p>{this.state.randomQuote}... A quote by {this.state.author}</p>
     </div>
     </div>
   );
